@@ -40,6 +40,8 @@ Close with `Esc`, `Enter`, or `q`.
 
 - Uses your existing OAuth sessions (no API keys required)
 - Reads credentials from `~/.pi/agent/auth.json` and falls back to `~/.codex/auth.json` for Codex
+- Launch at any time, even when a session is active
+- Feel free to open an issue/pr to add support for more providers
 
 ## License
 
