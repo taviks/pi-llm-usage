@@ -1,0 +1,15 @@
+{
+	"name": "pi-llm-usage",
+	"version": "0.1.0",
+	"description": "Pi extension to check Anthropic and OpenAI subscription usage",
+	"license": "MIT",
+	"pi": {
+		"extensions": [
+			"./src/index.ts"
+		]
+	},
+	"dependencies": {
+		"@mariozechner/pi-coding-agent": "*",
+		"@mariozechner/pi-tui": "*"
+	}
+}
