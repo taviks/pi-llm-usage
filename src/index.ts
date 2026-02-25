@@ -158,7 +158,7 @@ function renderPanel(
 	const footerRightWidth = visibleWidth(footerRight)
 	const footerLeftMax = Math.max(0, contentArea - footerRightWidth - 1)
 	const footerLeftLabel = fitTextEnd("[star/fork]", footerLeftMax)
-	const footerLeft = footerLeftLabel ? hyperlink("https://github.com/jaymakes11/pi-llm-usage", footerLeftLabel) : ""
+	const footerLeft = footerLeftLabel ? hyperlink("https://github.com/taviks/pi-llm-usage", footerLeftLabel) : ""
 	const footerLeftWidth = footerLeftLabel.length
 	const footerGap = Math.max(0, contentArea - footerLeftWidth - footerRightWidth)
 	lines.push(

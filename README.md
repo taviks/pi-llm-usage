@@ -9,7 +9,7 @@ A small [pi](https://github.com/badlogic/pi-mono) extension that adds a `/usage`
 ### Recommended (global convention)
 
 ```bash
-pi install git:github.com/jaymakes11/pi-llm-usage
+pi install git:github.com/taviks/pi-llm-usage
 ```
 
 This installs the package in pi's global location and updates global settings (`~/.pi/agent/settings.json`).
@@ -18,7 +18,7 @@ This installs the package in pi's global location and updates global settings (`
 
 ```json
 {
-  "packages": ["git:github.com/jaymakes11/pi-llm-usage"]
+  "packages": ["git:github.com/taviks/pi-llm-usage"]
 }
 ```
 
