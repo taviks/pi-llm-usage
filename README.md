@@ -1,61 +1,45 @@
 # pi-llm-usage
 
-A [pi](https://github.com/badlogic/pi-mono) extension to view your Anthropic and OpenAI Codex subscription usage as an overlay panel via a single `/usage` slash command.
+A small [pi](https://github.com/badlogic/pi-mono) extension that adds a `/usage` command to show LLM subscription usage in an overlay.
 
 ![pi-llm-usage overlay](./screenshot.png)
 
-## What it does
-
-Type `/usage` in pi to see a quick overlay showing:
-
-- **Anthropic** — 5h session, weekly, and per-model (Opus/Sonnet) usage windows
-- **OpenAI Codex** — Session and weekly usage windows
-
-Usage data is fetched from the provider APIs using your existing OAuth credentials.
-
 ## Install
 
-Add to your pi settings (`~/.pi/agent/settings.json`):
+### Recommended (global convention)
+
+```bash
+pi install git:github.com/jaymakes11/pi-llm-usage
+```
+
+This installs the package in pi's global location and updates global settings (`~/.pi/agent/settings.json`).
+
+### Manual settings entry (global)
 
 ```json
 {
-  "packages": ["/absolute/path/to/pi-llm-usage"]
+  "packages": ["git:github.com/jaymakes11/pi-llm-usage"]
 }
 ```
 
-Or install from Git:
-
-```json
-{
-  "packages": ["git:github.com/<owner>/pi-llm-usage"]
-}
-```
-
-## Requirements
-
-- [pi](https://github.com/badlogic/pi-mono) coding agent
-- OAuth login for Anthropic and/or OpenAI Codex (via `/login` in pi)
-
-The extension reads OAuth tokens from:
-- `~/.pi/agent/auth.json` (pi's OAuth credentials)
-- `~/.codex/auth.json` (Codex CLI credentials, fallback for OpenAI)
-
-No API keys needed — it uses your existing OAuth session.
+Then run `/reload` in pi.
 
 ## Usage
 
-```
+```text
 /usage
 ```
 
-Press `Esc`, `Enter`, or `q` to close the panel.
+Shows usage windows for:
+- Anthropic (5h / weekly / model-specific when available)
+- OpenAI Codex (session / weekly)
 
-## How it works
+Close with `Esc`, `Enter`, or `q`.
 
-- **Anthropic**: `GET https://api.anthropic.com/api/oauth/usage` with `anthropic-beta: oauth-2025-04-20` header
-- **OpenAI Codex**: `GET https://chatgpt.com/backend-api/wham/usage` with OAuth bearer token
+## Notes
 
-Credit to [CodexBar](https://github.com/steipete/CodexBar) for documenting these endpoints.
+- Uses your existing OAuth sessions (no API keys required)
+- Reads credentials from `~/.pi/agent/auth.json` and falls back to `~/.codex/auth.json` for Codex
 
 ## License
 
