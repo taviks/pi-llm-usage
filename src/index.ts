@@ -174,7 +174,12 @@ function renderPanel(
 }
 
 function renderLinks(links: ProviderLink[], theme: Theme): string {
-	return links.map((l) => theme.fg("dim", "[") + theme.fg("muted", l.label) + theme.fg("dim", "]")).join(" ")
+	return links
+		.map((l) => {
+			const label = theme.fg("dim", "[") + theme.fg("muted", l.label) + theme.fg("dim", "]")
+			return hyperlink(l.url, label)
+		})
+		.join(" ")
 }
 
 /** Visible character width of the links string (no ANSI escapes) */
