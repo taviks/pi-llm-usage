@@ -1,3 +1,6 @@
+> [!NOTE]
+> Moved to: https://github.com/taviks/pi-tools
+
 # pi-llm-usage
 
 A small [pi](https://github.com/badlogic/pi-mono) extension that adds a `/usage` command to show LLM subscription usage in an overlay.
